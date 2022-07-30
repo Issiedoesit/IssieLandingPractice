@@ -606,6 +606,7 @@ button:hover{
         padding-left: 8vw;
         padding-bottom: 5vh;
     }
+   
     .start{
         font-size: .8em;
         padding-top: 40vh;
@@ -832,10 +833,37 @@ button:hover{
         margin-top: -30px;
     }
     .start{
-        font-size: .6em;
+        height: auto;
+        font-size: 1.2em;
+    }
+    .start-btns-right{
+        width: 30vw;
+        z-index: 45;
     }
     .start-btn-right{
+        margin: 10px auto;
+    }
+    .service-team div:nth-child(1){
+        margin-top: 10vh;
+        width: 60%;
+        font-size:1.3em ;
+    }
+    .service-img{
+        top:35%;
+        width: 50%
+    }
+}
+@media screen and (min-width:700px) and (max-width:1400px) and (min-height:700px){
+    .start{
+        height: auto;
+        font-size: 1.2em;
+    }
+    .start-btns-right{
+        width: 30vw;
         z-index: 45;
+    }
+    .start-btn-right{
+        margin: 10px auto;
     }
 }
 
@@ -1091,4 +1119,42 @@ button:hover{
     }
     
 
+}
+
+@media  screen and (max-height:400px) {
+   .index-header, .index-hero-main{
+        min-height: 80vw;
+        height: auto;
+        margin-bottom: 5vw;
+    }
+    #slideOne .index-hero-btn{
+        font-size: 5vh;
+    }
+    #slideOne .index-hero-text{
+        font-size: 5vh;
+    }
+    #slideOne video{
+        height: 30vw;
+        top: 45%;
+    }
+    .circles{
+        top:150%;
+    }
+    .start{
+        min-height: 50vh;
+        height: auto;
+        font-size: .6em;
+    }
+    .service-team{
+        min-height: 50vh;
+        height: auto;
+        font-size: .6em;
+    }
+    .start-btns-right{
+        width: 30vw;
+        z-index: 45;
+    }
+    .start-btn-right{
+        margin: 10px auto;
+    }
 }
