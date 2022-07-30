@@ -67,6 +67,9 @@ header, .index-header{
     text-decoration: none;
     padding: 10px 20px;
 }
+.nav-link:visited{
+    color: var(--primary-blue-active-focus);
+}
 .nav-link:hover{
     border-bottom: var(--decoration-border);
     color: var(--secondary-brown-hover);
@@ -550,10 +553,14 @@ button:hover{
     height: 3px;
     margin: 5px;
     background-color: var(--primary-blue-active-focus);
+    transition: 0.2s ease-in-out;
 }
 .hamburger:hover .toggle-item{
     cursor: pointer;
     background-color: var(--secondary-brown-hover);
+}
+.profile-circle{
+    display: none;
 }
 
 @keyframes myMoveLeft {
@@ -595,12 +602,6 @@ button:hover{
     }
     .what-is-lower-content div:nth-child(1){
         width: 35%;
-        margin-left: -8vw;
-        padding-left: 8vw;
-        padding-bottom: 5vh;
-    }
-    .what-is-lower-content div:nth-child(1){
-        width: 35%;
         margin-left: 0vw;
         padding-left: 8vw;
         padding-bottom: 5vh;
@@ -616,6 +617,7 @@ button:hover{
 @media screen and (min-width:700px) and (max-width:1100px) {
     .nav{
         flex-wrap: wrap;
+    
     }
     .nav-links{ 
         display: none;
@@ -623,6 +625,7 @@ button:hover{
         z-index: 30;
         flex-basis: 100%;
         background-color: var(--white);
+        box-shadow: var(--box-shadow-gray);
         order: 2;
         right: 0;
         flex-direction: column;
@@ -658,8 +661,6 @@ button:hover{
         font-size: 2em;
     }
     #slideOne video{
-        box-shadow: var(--box-shadow-gray);
-        border: solid 5px rgba(255, 255, 255, 0.3);
         height: 60vh;
         width: 50vw;
         margin-right: -5vw;
@@ -689,7 +690,7 @@ button:hover{
         font-size: .8em;
     }
     .why-use{
-        height: 50vh;
+        min-height: 30vh;
         font-size: .8em;
     }
     .why-use-body > *{
@@ -706,11 +707,24 @@ button:hover{
     }
     .what-is-lower-content div:nth-child(1){
         width: 35%;
+        font-size: 1em;
         padding-left: 2vh;
         padding-bottom: 5vh;
     }
     .what-is-lower-content div:nth-child(3){
         width: 35%;
+        font-size: 1em;
+        margin-left: 5vw;
+        padding-bottom: 5vh;
+    }
+    .what-is-lower-content div:nth-child(4){
+        width: 35%;
+        margin-left: 5vw;
+        padding-bottom: 5vh;
+        font-size: 1em;
+    }
+    .what-is-lower-content div:nth-child(2){
+        width: 35%;font-size: 1em;
         margin-left: 5vw;
         padding-bottom: 5vh;
     }
@@ -719,6 +733,7 @@ button:hover{
         margin-left: 10%;
         padding-left: 2vh;
         padding-bottom: 5vh;
+        font-size: 1em;
     }
     .start{
         min-height: 30vh;
@@ -783,8 +798,36 @@ button:hover{
         transform: translateY(-7px) rotate(-45deg);  
     }
 }
-
-@media screen and (min-width:700px) and (max-width:900px){
+@media screen and (min-width:360px) and (max-width:450px) and (min-height:700px) and (max-height:1000px) {
+  
+    #slideOne .index-hero-text h1{
+        line-height: 35px;
+    }
+}
+@media screen and (min-width:700px) and (max-width:1400px) and (min-height:900px){
+    .index-hero-main{
+        position: absolute;
+        height: 100vh;
+    }
+    #slideOne {
+        flex-direction: column;
+    }
+    #slideOne video{
+        flex-direction: column;
+        left: 15vw;
+        top: 30vh;
+        height: auto ;
+        height: 45vh;
+        width: 70vw;
+    }
+    #slideOne .index-hero-text{
+        top: 4vh;
+        left: 5%;
+        width: 90%;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: center;
+    }
     .service-team div:nth-child(1){
         margin-top: -30px;
     }
@@ -795,11 +838,19 @@ button:hover{
         z-index: 45;
     }
 }
-@media screen and (min-width:200px) and (max-width:700px) {
 
-    .nav{
-        flex-wrap: wrap;
+@media screen and (min-width:200px) and (max-width:700px) {
+    .profile-circle{
+        display: block;
     }
+    .profile-circle .fa-solid{
+        margin-left: 35vw;
+        color: var(--primary-blue-active-focus);
+    }
+    .profile-circle .fa-solid:hover{
+        color: var(--secondary-brown-active-focus);
+    }
+    
     .circles{
         left:45vw;
     }
@@ -813,12 +864,16 @@ button:hover{
         flex-direction: column;
         top: 15%;
         right: 0;
+        opacity: 1;
         padding: 18px 10px;
         z-index: 40;
+        box-shadow: var(--box-shadow-gray);
 
     }
     .nav-btn{
-        margin: 15px 0%;
+        font-size: 20px;
+        width: 80%;
+        margin: 15px auto;
     }
     .nav img{
         width: 30vw;
@@ -835,20 +890,21 @@ button:hover{
         width: 90%;
         z-index: 30;
         flex-basis: 100%;
+        box-shadow: var(--box-shadow-gray);
         background-color: var(--white);
         order: 3;
         right: 0;
         flex-direction: column;
-        top: 30vh;
+        top: 15vh;
         padding: 50px 10%;
     }
     .toggle-item{
         display: block;
     }
     .active-small{
-        display: flex; 
-        
+        display: flex;    
     }
+   
     .hamburger.click-small .toggle-item:nth-child(2){
         opacity: 0;
     }
@@ -884,9 +940,18 @@ button:hover{
         font-size: .8em;
     }
     #slideOne .index-hero-text{
-        top: 5vh;
+        font-size: 2.7vh;
+        line-height: 25px;
+        top: 4vh;
         left:5%;
         text-align: center;
+    }
+    #slideOne .index-hero-text h1{
+        font-weight: 500;
+    }
+    #slideOne .index-hero-btn{
+        font-size: 4vw;
+        padding: 10px 20px;
     }
     #slideOne video{
         height: 30vh;
@@ -940,9 +1005,7 @@ button:hover{
     .how-to-view article{
         flex-direction: column;
     }
-    .reviews-and-awards{
-        max-height: 250vh;
-    }
+   
     .review-content{
         flex-direction: column;
     }

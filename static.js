@@ -1,9 +1,7 @@
 
-
-/*
-var urlsSplit = (window.location.href).split('/')
-var urlName = urlsSplit[urlsSplit.length - 1].split('.')[0]
-*/
+/*This section gets title from the body of the page and 
+compares with the array of page titles and highlights 
+the current page in the nav bar */
 var bodyTitle = document.querySelector('body')
 var bodyTitleAttr = bodyTitle.getAttribute('title')
 var navLinks = document.querySelectorAll('.nav-link')
@@ -21,26 +19,17 @@ function myHighLight(){
     }
     
 }
-
 window.onload = myHighLight()
-
-
-var x = document.getElementsByClassName('index-hero-main')
-var dot = document.getElementsByClassName('circle')
-var vid = document.querySelector('video')
-/*var timeOut = 5000;
-
-if(!(vid.ended) || !(vid.paused)){
-    timeOut = vid.duration
-    timeOut = parseInt(timeOut * 1000)
-    console.log (vid.currentTime)
-} */
-
+/* This section creates the logic for changing slides on the landing page hero section*/
 var hamburger = document.getElementById('hamburger')
-
 var menu = document.getElementById('navMenu')
 var navBtn = document.getElementById('navBtn')
+var profile = document.getElementById('profile')
+
 hamburger.addEventListener('click', ()=>{
+    if (navBtn.classList.contains('active-small')){
+        profile.click()
+        }
   if (window.innerWidth > 700){
     hamburger.classList.toggle('click')
     menu.classList.toggle('active')
@@ -49,12 +38,20 @@ hamburger.addEventListener('click', ()=>{
   {
     hamburger.classList.toggle('click-small')
     menu.classList.toggle('active-small')
-    navBtn.classList.toggle('active-small')
-  }
-  if(menu.style.display == 'flex'){
-      hamburger.setAttribute('title', 'Click To Close')
   }
 })
+
+profile.addEventListener('click', ()=>{
+    if (menu.classList.contains('active-small')){
+        hamburger.click()
+    }
+    navBtn.classList.toggle('active-small')
+
+})
+
+var x = document.getElementsByClassName('index-hero-main')
+var dot = document.getElementsByClassName('circle')
+
 
 var index = 1;
 myShows(index)
@@ -62,11 +59,7 @@ myShows(index)
 function myCurrent(n){
    myShows(index = n)
 }
-setInterval( 
-    function myTimer(){
-        index++
-        myShows(index)
-    },5000)
+
 function myShows(){
    if (index > (x.length)) {index = 1}
    if (index < 1) {index = x.length}
@@ -83,8 +76,35 @@ function myShows(){
    
 }
 
+/*VIDEO*/
+
+var vid = document.querySelector('video')
+var vidDuration = vid.duration;
 
 
+/*VIDEO END*/
+vid.onpause = ()=>{
+    setInterval( 
+        function myTimer(){
+            index++
+            myShows(index)
+        },5000)
+}
+
+
+/*var timeOut = 5000;
+
+if(!(vid.ended) || !(vid.paused)){
+    timeOut = vid.duration
+    timeOut = parseInt(timeOut * 1000)
+    console.log (vid.currentTime)
+} */
+
+/*This section creates the collapsible menu controls*/
+
+
+
+/*This section is for the review section on landing page */
 var reviews = document.getElementsByClassName('review')
 var reviewImage = document.getElementsByClassName('review-image')
 var reviewImageLen = reviewImage.length
