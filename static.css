@@ -67,7 +67,7 @@ header, .index-header{
     text-decoration: none;
     padding: 10px 20px;
 }
-.nav-link:visited{
+.nav-link:visited, .nav-link, .nav-link:hover{
     color: var(--primary-blue-active-focus);
 }
 .nav-link:hover{
