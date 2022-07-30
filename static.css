@@ -1121,7 +1121,7 @@ button:hover{
 
 }
 
-@media  screen and (max-height:400px) {
+@media  screen and (max-height:450px) {
    .index-header, .index-hero-main{
         min-height: 80vw;
         height: auto;
@@ -1144,6 +1144,7 @@ button:hover{
         min-height: 50vh;
         height: auto;
         font-size: .6em;
+        background-color: red;
     }
     .service-team{
         min-height: 50vh;
