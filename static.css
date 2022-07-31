@@ -622,11 +622,6 @@ a{
     }
    
 }
-@media screen and (max-width:767px) and (orientation:landscape){
-    .active-small{
-        top: 20vh;
-    }
-}
 @media screen and (min-width:768px) and (max-width:1023px){
     .vid-popup-wrapper{
         margin-top: -10vh;
@@ -697,6 +692,7 @@ a{
     }
     .hamburger{
         display: block;
+        z-index: 30;
     }
     .hamburger.click-small .toggle-item:nth-child(2){
         opacity: 0;
@@ -712,6 +708,10 @@ a{
         height: 3px;
         width: 30px;
         background-color: var(--primary-blue-active-focus);
+    }
+    .nav-link{
+        width: 40%;
+        margin: auto;
     }
     .index-hero-container{
         width: 100%;
@@ -1099,6 +1099,16 @@ a{
         background-color: var(--secondary-brown-hover);
     }
     
+}
+@media screen and (max-width:1023px) and (orientation:landscape){
+    .active-small{
+        top: 20vh;
+    }
+    .nav-link{
+        width: 40%;
+        margin: auto;
+    }
+
 }
 @media screen and (min-width:1024px) {
     html,.index-body,main{
