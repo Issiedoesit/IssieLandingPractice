@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body title="index" class="index-body" id="indexBody">
-    <header class="index-header">
+    <header class="index-header" id='indexHeader'>
         <nav class="nav">
             <img src="images/Logo.png" alt="Logo" class="logo">
             <div class="nav-links" title="links" id="navMenu">
@@ -40,7 +40,7 @@
                     <button type="submit" class="index-hero-btn">Sign Up</button>
                 </div>
                 <div class="index-hero-media">
-                    <video  width="400" controls>
+                    <video  width="400" id="vidHero">
                         <source src="images/metadata-demo.MP4" type="video/mp4">
                     </video>
                 </div>
@@ -80,7 +80,15 @@
             </div>
         </section>
     </header>
-    <main>
+    <section class="vid-popup-wrapper" id="vidWrap">
+        <span id="close">X</span>
+        <div class="vid-popup-container" id="vidPop">
+            <video  width="400" controls id="videoPop">
+                <source src="images/metadata-demo.MP4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <main id="indexMain">
         <section class="why-use">
             <h1>Why Use 84 Meta?</h1>
             <div class="why-use-body">

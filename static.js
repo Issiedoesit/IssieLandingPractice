@@ -73,7 +73,12 @@ function myShows(){
 
 /*VIDEO*/
 
-var vid = document.querySelector('video')
+var vid = document.getElementById('vidHero')
+var vidPop = document.querySelector('#videoPop')
+var overLay = document.getElementById('vidWrap')
+var closeVid = document.getElementById('close')
+var indexHero = document.getElementById('indexHeader')
+var indexMain = document.getElementById('indexMain')
 var vidDuration = vid.duration;
 
 
@@ -81,9 +86,22 @@ var vidDuration = vid.duration;
 
 
 
+vid.onclick = ()=>{
+    vid.pause()
+    overLay.style.display = 'flex';
+    indexHero.classList.add('blur')
+    indexMain.classList.add('blur')
+}
 
+closeVid.onclick = ()=> {
+    vidPop.pause()
+    overLay.style.display = 'none';
+    indexHero.classList.remove('blur')
+    indexMain.classList.remove('blur')
+    
+}
 
-vid.onpause = ()=>{
+vidPop.onpause = ()=>{
     setInterval( 
         function myTimer(){
             index++
@@ -92,7 +110,25 @@ vid.onpause = ()=>{
 }
 
 
-/*var timeOut = 5000;
+var slideInterval = setInterval( 
+    function myTimer(){
+        index++
+        myShows(index)
+    },5000)
+
+
+window.onscroll = () => {
+    if (overLay.style.display == 'flex'){
+        overLay.style.display = 'none';
+        vidPop.pause()
+        indexHero.classList.remove('blur')
+        indexMain.classList.remove('blur')
+    }
+}
+
+  
+
+    /*var timeOut = 5000;
 
 if(!(vid.ended) || !(vid.paused)){
     timeOut = vid.duration

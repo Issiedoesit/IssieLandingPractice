@@ -86,6 +86,44 @@ a{
 .profile-circle{
     display: none;
 }
+.vid-popup-wrapper{
+    top: 15vh;
+    left: 20%;
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 5%;
+    background-color: var(--white);
+    opacity: .9;
+}
+#close{
+    position: absolute;
+    font-size: 1.5em;
+    color: black;
+    top: 0%;
+    right:1vw;
+    cursor: pointer;
+}
+#close:hover{
+    color: red;
+}
+.blur{
+    filter: blur(100px);
+    -webkit-filter: blur(100px);
+    -moz-filter: blur(100px);
+    -o-filter: blur(100px);
+    -ms-filter: blur(100px);
+}
+.vid-popup-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
 
 @keyframes myMoveLeft {
     0%{
@@ -545,7 +583,17 @@ a{
         -webkit-animation: myFade 2s linear forwards;
         animation: myFade 2s linear forwards ;
     }
-   
+    #close{
+        right: -12vw;
+    }
+    .vid-popup-wrapper{
+        background-color: transparent;
+    }
+    #videoPop{
+        margin: auto;
+        margin-top: 10vh;
+        max-width:300px;
+    }
 }
 @media screen and (min-width:600px) and (max-width:768px) {
     .profile-circle{
