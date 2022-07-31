@@ -86,43 +86,36 @@ var vidDuration = vid.duration;
 
 
 
-vid.onclick = ()=>{
+vid.onplay = ()=>{
     vid.pause()
+    vidPop.play()
     overLay.style.display = 'flex';
     indexHero.classList.add('blur')
-    indexMain.classList.add('blur')
+    indexMain.style.display = 'none'
+    indexMain.nextElementSibling.style.display = 'none'
 }
 
 closeVid.onclick = ()=> {
     vidPop.pause()
     overLay.style.display = 'none';
     indexHero.classList.remove('blur')
-    indexMain.classList.remove('blur')
+    indexMain.style.display = 'block'
+    indexMain.nextElementSibling.style.display = 'flex'
     
 }
 
-vidPop.onpause = ()=>{
-    setInterval( 
-        function myTimer(){
-            index++
-            myShows(index)
-        },10000)
-}
 
 
 var slideInterval = setInterval( 
     function myTimer(){
         index++
         myShows(index)
-    },5000)
+    },10000)
 
 
 window.onscroll = () => {
     if (overLay.style.display == 'flex'){
-        overLay.style.display = 'none';
         vidPop.pause()
-        indexHero.classList.remove('blur')
-        indexMain.classList.remove('blur')
     }
 }
 

@@ -96,19 +96,23 @@ a{
     align-items: center;
     width: 60%;
     padding: 5%;
-    background-color: var(--white);
+    background-color: transparent;
     opacity: .9;
 }
 #close{
     position: absolute;
-    font-size: 1.5em;
-    color: black;
+    font-size: 1em;
+    padding: 3% 5%;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-blue-active-focus);
+    color: var(--white);
     top: 0%;
     right:1vw;
     cursor: pointer;
 }
 #close:hover{
-    color: red;
+    background-color: var(--primary-blue-hover);
+    color: var(--secondary-brown);
 }
 .blur{
     filter: blur(100px);
@@ -586,6 +590,9 @@ a{
     #close{
         right: -12vw;
     }
+    .vid-popup-container{
+        margin-top: 5vh;
+    }
     .vid-popup-wrapper{
         background-color: transparent;
     }
@@ -598,12 +605,39 @@ a{
 @media screen and (min-width:600px) and (max-width:768px) {
     .profile-circle{
         margin-left: 15vw;
-    }  
+    } 
+    .vid-popup-wrapper{
+        margin-top: -10vh;
+    } 
+    .vid-popup-wrapper{
+        background-color: transparent;
+    }
+    #videoPop{
+        margin: auto;
+        margin-top: 0vh;
+        min-width:500px;
+    }
+    #slideFour img{
+        min-width: 600px;
+    }
    
 }
 @media screen and (max-width:767px) and (orientation:landscape){
     .active-small{
         top: 20vh;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+    .vid-popup-wrapper{
+        margin-top: -10vh;
+    } 
+    .vid-popup-wrapper{
+        background-color: transparent;
+    }
+    #videoPop{
+        margin: auto;
+        margin-top: 55%;
+        min-width:500px;
     }
 }
 @media screen and (min-width:768px) and (max-width:1023px) {
@@ -1143,6 +1177,17 @@ a{
         width: 100%;
         padding: 0% 5%;
     }
+    #close{
+        position: absolute;
+        font-size: .9em;
+        padding: 1% 5%;
+        border-radius: var(--border-radius);
+        background-color: var(--primary-blue-active-focus);
+        color: var(--white);
+        top: 0%;
+        right:1vw;
+        cursor: pointer;
+    }
     .index-hero-btn{
         margin: 0px 10px;
         padding: 10px 40px;
@@ -1163,6 +1208,10 @@ a{
         font-size:2em ;
         padding-right:10% ;
     }
+    #slideThree h1, #slideTwo h1{
+        font-size:1.7em ;
+        padding-right:10% ;
+    }
     #slideOne p{
         font-size:1.1em ;
         padding-right:10%;
@@ -1176,10 +1225,12 @@ a{
         padding-top: 5%;
     }
     #slideOne video{
-        padding-right: 15%;
+        padding-right: 0%;
         height: 400px;
-        width: 100%;
+        width: 110%;
+        margin-right: -10vw;
         margin-top: 10vh;
+        z-index: 10;
     }
     #slideFour{
         margin-top: 2.5%;
@@ -1226,7 +1277,7 @@ a{
     #slideTwo .index-hero-text, #slideThree .index-hero-text{
         position: absolute;
         z-index: 10;
-        top: 20vw;
+        top: 18vw;
         max-width: 50vw;
         color: var(--white);
         padding: 5%;
