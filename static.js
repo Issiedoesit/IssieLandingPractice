@@ -27,25 +27,20 @@ var navBtn = document.getElementById('navBtn')
 var profile = document.getElementById('profile')
 
 hamburger.addEventListener('click', ()=>{
-    if (navBtn.classList.contains('active-small')){
+    if (navBtn.classList.contains('active')){
         profile.click()
         }
-  if (window.innerWidth > 700){
-    hamburger.classList.toggle('click')
-    menu.classList.toggle('active')
-  }
-  if (window.innerWidth < 699)
-  {
+ 
     hamburger.classList.toggle('click-small')
     menu.classList.toggle('active-small')
-  }
+  
 })
 
 profile.addEventListener('click', ()=>{
     if (menu.classList.contains('active-small')){
         hamburger.click()
     }
-    navBtn.classList.toggle('active-small')
+    navBtn.classList.toggle('active')
 
 })
 
@@ -83,12 +78,17 @@ var vidDuration = vid.duration;
 
 
 /*VIDEO END*/
+
+
+
+
+
 vid.onpause = ()=>{
     setInterval( 
         function myTimer(){
             index++
             myShows(index)
-        },5000)
+        },10000)
 }
 
 
@@ -122,10 +122,8 @@ function myReview(){
     }
     reviews[indexTwo-1].style.opacity = '1'
     for (let i = 0; i < reviewImageLen; i++){
-        reviewImage[i].style.height = ''
         reviewImage[i].style.width = ''
     }
-    reviewImage[indexTwo-1].style.height = '50%'
     reviewImage[indexTwo-1].style.width = '50%'
 }
 
