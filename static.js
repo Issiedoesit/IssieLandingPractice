@@ -108,7 +108,7 @@ var slideInterval = setInterval(
     function myTimer(){
         index++
         myShows(index)
-    },100000)
+    },10000)
 
 
 window.onscroll = () => {
