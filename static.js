@@ -86,13 +86,11 @@ var vidDuration = vid.duration;
 
 
 
-vid.onplay = ()=>{
-    vid.pause()
+vid.onclick = ()=>{
     vidPop.play()
     overLay.style.display = 'flex';
     indexHero.classList.add('blur')
     indexMain.style.display = 'none'
-    indexMain.nextElementSibling.style.display = 'none'
 }
 
 closeVid.onclick = ()=> {
@@ -110,7 +108,7 @@ var slideInterval = setInterval(
     function myTimer(){
         index++
         myShows(index)
-    },10000)
+    },100000)
 
 
 window.onscroll = () => {

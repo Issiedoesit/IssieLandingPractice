@@ -86,6 +86,9 @@ a{
 .profile-circle{
     display: none;
 }
+img{
+    cursor: pointer;
+}
 .vid-popup-wrapper{
     top: 15vh;
     left: 20%;
@@ -290,7 +293,7 @@ a{
     #slideOne{
         display: flex;
     }
-    #slideOne video, 
+    #slideOne img, 
     #slideTwo img,
     #slideThree img,
     #slideFour img{
@@ -734,7 +737,7 @@ a{
     #slideOne{
         display: flex;
     }
-    #slideOne video, 
+    #slideOne img, 
     #slideTwo img,
     #slideThree img,
     #slideFour img{
@@ -1234,10 +1237,11 @@ a{
         padding-bottom: 5%;
         padding-top: 5%;
     }
-    #slideOne video{
+    #slideOne img{
+        cursor: pointer;
         padding-right: 0%;
         height: 400px;
-        width: 110%;
+        width: 100%;
         margin-right: -10vw;
         margin-top: 10vh;
         z-index: 10;
